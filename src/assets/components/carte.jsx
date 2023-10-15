@@ -1,22 +1,30 @@
 import React from "react";
 import "../components/carteCss.css"
+import { useState } from "react";
 
-const Carte = ({ children }) => {
+
+const Carte = ({ animalNew }) => {
+
+  const [isValidation, setIsValidation] = useState(animalNew.isValidation);
+  const handleClickValidation = () => {
+    setIsValidation(!isValidation);
+  };
+  const isValidationClass = isValidation ? 'isValidation' : 'isNotValidation';
+
+  
   return (
     <div className="globale">
       <div className="titre">
-        <h1>{children}</h1>
+        <h1>{animalNew.name}</h1>
       </div>
-        <img className="page" src="src\assets\th.jpg" alt="la_belle_mere" />
+        <img className="page" src={animalNew.image} alt={animalNew.name}/>
       <div>
       <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
-        voluptas magni illo quidem officiis dolorum earum, aut distinctio
-        quibusdam, quis, nemo illum laudantium officia? Facilis, quam sit.
-        Aliquid, pariatur quasi!
+        {animalNew.description}
       </p>
-      <button className="selection"> clic</button>
       </div>
+      <button onClick={handleClickValidation} className={isValidationClass}> clic</button>
+      
     </div>
   );
 };

@@ -4,19 +4,20 @@ import Carte from './assets/components/carte'
 import './App.css'
 import "./assets/components/carteCss.css"
 import "./assets/components/carte"
+import NewCarte from './assets/components/carteNew';
 
 const animal= [
   {
     name:"pedro",
-    image:"./assets/cat1.jpg",
-    description:"chat de petite taille tres agressif",
+    image:"src/assets/cat1.jpg",
+    description:"chat de petite taille très agressif",
     isvalidation:false,
   },
 
   {
     name:"brigitte",
-    image:"./assets/th.jpg",
-    description:"boxer super tranquille",
+    image:"src/assets/th.jpg",
+    description:"chien très actif",
     isvalidation:false,
   },
 ]
@@ -26,9 +27,8 @@ function App() {
 
   return (
     <div className='conteneur'>
-    <Carte>chat </Carte>
-    <Carte>chien</Carte>
-    <Carte>belle-mére</Carte>
+    <NewCarte  animalfatal = {animal} />
+   
     </div>
   )
 }
