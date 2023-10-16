@@ -1,5 +1,7 @@
 import Carte from "./carte";
 import React from "react";
+
+
 const NewCarte = ({animalfatal})=>{
 return(
 <div>
